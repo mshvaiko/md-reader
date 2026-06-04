@@ -20,9 +20,15 @@ pub enum SpeechOutcome {
 }
 
 pub fn default_model_paths() -> (PathBuf, PathBuf) {
+    let model_path = PathBuf::from(DEFAULT_MODEL_PATH);
+    let config_path = PathBuf::from(DEFAULT_CONFIG_PATH);
+    if model_path.exists() && config_path.exists() {
+        return (model_path, config_path);
+    }
+
     (
-        PathBuf::from(DEFAULT_MODEL_PATH),
-        PathBuf::from(DEFAULT_CONFIG_PATH),
+        PathBuf::from("/usr/share/md-reader/models/en_US-libritts_r-medium.onnx"),
+        PathBuf::from("/usr/share/md-reader/models/en_US-libritts_r-medium.onnx.json"),
     )
 }
 

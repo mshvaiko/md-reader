@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=md-reader
+Comment=Read Markdown files
+Exec=md-reader %f
+Icon=md-reader
+Terminal=false
+Categories=Office;TextEditor;Viewer;
+MimeType=text/markdown;text/plain;
