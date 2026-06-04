@@ -10,6 +10,7 @@ A fast, lightweight Markdown reader desktop app built with **Rust** + **egui**.
 - **Live reload** — watches the open file; updates within ~1 s when you save in any editor
 - **Table of Contents** sidebar — click to jump to any heading
 - **Ctrl+F search** — find text, navigate matches
+- Piper text-to-speech — reads the open Markdown file aloud, with stop support
 - Dark / Light theme toggle
 - Zoom (Ctrl+`+` / Ctrl+`-` / Ctrl+`0`)
 - Persistent state: window size, theme, zoom, last file, sidebar width
@@ -33,6 +34,21 @@ sudo apt install libgtk-3-dev libxcb-render0-dev libxcb-shape0-dev \
      libxcb-xfixes0-dev libxkbcommon-dev libssl-dev
 ```
 
+## Text to Speech Models
+
+The app looks for the default US Piper voice in this order:
+
+1. `models/en_US-libritts_r-medium.onnx` next to the source tree
+2. `/usr/share/md-reader/models/en_US-libritts_r-medium.onnx` after Debian package install
+
+Build the Debian package with:
+
+```bash
+packaging/build-deb.sh
+```
+
+The package build downloads the default US Piper model if it is missing locally, then installs it under `/usr/share/md-reader/models` so text-to-speech works after `apt install`.
+
 ## Keyboard Shortcuts
 
 | Action | Key |
@@ -41,6 +57,7 @@ sudo apt install libgtk-3-dev libxcb-render0-dev libxcb-shape0-dev \
 | Search | `Ctrl+F` |
 | Next match | `Enter` |
 | Close search | `Esc` |
+| Read aloud | toolbar button |
 | Zoom in | `Ctrl++` |
 | Zoom out | `Ctrl+-` |
 | Reset zoom | `Ctrl+0` |

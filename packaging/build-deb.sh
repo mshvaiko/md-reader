@@ -5,6 +5,7 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 PKG_NAME="md-reader"
 
 cd "${ROOT}"
+"${ROOT}/packaging/fetch-default-model.sh"
 cargo build --release
 
 VERSION="$("${ROOT}/target/release/md-reader" --version | awk '{print $2}')"
@@ -26,10 +27,7 @@ install -m 0644 "${ROOT}/packaging/md-reader.desktop" "${BUILD_DIR}/usr/share/ap
 install -m 0644 "${ROOT}/packaging/md-reader.svg" "${BUILD_DIR}/usr/share/icons/hicolor/scalable/apps/md-reader.svg"
 install -m 0644 "${ROOT}/README.md" "${BUILD_DIR}/usr/share/doc/${PKG_NAME}/README.md"
 install -m 0644 "${ROOT}/models/en_US-libritts_r-medium.onnx.json" "${BUILD_DIR}/usr/share/md-reader/models/en_US-libritts_r-medium.onnx.json"
-
-if [[ -f "${ROOT}/models/en_US-libritts_r-medium.onnx" ]]; then
-  install -m 0644 "${ROOT}/models/en_US-libritts_r-medium.onnx" "${BUILD_DIR}/usr/share/md-reader/models/en_US-libritts_r-medium.onnx"
-fi
+install -m 0644 "${ROOT}/models/en_US-libritts_r-medium.onnx" "${BUILD_DIR}/usr/share/md-reader/models/en_US-libritts_r-medium.onnx"
 
 INSTALLED_SIZE="$(du -sk "${BUILD_DIR}" | awk '{print $1}')"
 cat > "${BUILD_DIR}/DEBIAN/control" <<CONTROL
