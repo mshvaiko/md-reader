@@ -64,7 +64,7 @@ pub fn show(app: &mut MdApp, ui: &mut egui::Ui) {
                     ui.label(
                         RichText::new("No matches")
                             .small()
-                            .color(egui::Color32::from_rgb(200, 80, 80)),
+                            .color(egui::Color32::from_rgb(244, 135, 113)),
                     );
                 }
 

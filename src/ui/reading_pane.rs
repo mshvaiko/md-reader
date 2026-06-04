@@ -22,7 +22,7 @@ pub fn show(app: &mut MdApp, ui: &mut egui::Ui) {
             let i = app.search_idx + 1;
             let q = app.search_query.clone();
             egui::Frame::new()
-                .fill(Color32::from_rgba_unmultiplied(80, 130, 220, 20))
+                .fill(Color32::from_rgba_unmultiplied(0, 122, 204, 24))
                 .inner_margin(egui::Margin::symmetric(12, 3))
                 .show(ui, |ui| {
                     ui.label(
@@ -114,7 +114,7 @@ fn show_frontmatter(
     let accent = ui.visuals().hyperlink_color;
     let weak = ui.visuals().weak_text_color();
     let bg = if ui.visuals().dark_mode {
-        Color32::from_rgba_unmultiplied(40, 44, 56, 200)
+        Color32::from_rgba_unmultiplied(45, 45, 45, 220)
     } else {
         Color32::from_rgba_unmultiplied(230, 235, 248, 200)
     };

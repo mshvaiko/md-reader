@@ -12,26 +12,31 @@ pub fn apply(ctx: &Context, dark: bool, zoom: f32) {
 
 pub fn dark_visuals() -> Visuals {
     let mut v = Visuals::dark();
-    v.panel_fill = Color32::from_rgb(20, 22, 27);
-    v.window_fill = Color32::from_rgb(20, 22, 27);
-    v.faint_bg_color = Color32::from_rgb(26, 28, 35);
-    v.extreme_bg_color = Color32::from_rgb(14, 15, 18);
-    v.code_bg_color = Color32::from_rgb(28, 30, 40);
-    v.override_text_color = Some(Color32::from_rgb(212, 216, 225));
-    v.hyperlink_color = Color32::from_rgb(100, 180, 255);
-    v.selection.bg_fill = Color32::from_rgba_unmultiplied(64, 120, 220, 80);
+    v.panel_fill = Color32::from_rgb(37, 37, 38);
+    v.window_fill = Color32::from_rgb(30, 30, 30);
+    v.faint_bg_color = Color32::from_rgb(45, 45, 45);
+    v.extreme_bg_color = Color32::from_rgb(24, 24, 24);
+    v.code_bg_color = Color32::from_rgb(30, 30, 30);
+    v.override_text_color = Some(Color32::from_rgb(212, 212, 212));
+    v.hyperlink_color = Color32::from_rgb(55, 148, 255);
+    v.selection.bg_fill = Color32::from_rgba_unmultiplied(0, 122, 204, 90);
 
-    set_widget_corners(&mut v, CornerRadius::same(6));
+    set_widget_corners(&mut v, CornerRadius::same(3));
 
-    v.widgets.noninteractive.bg_fill = Color32::from_rgb(28, 30, 38);
-    v.widgets.inactive.bg_fill = Color32::from_rgb(34, 37, 46);
-    v.widgets.hovered.bg_fill = Color32::from_rgb(44, 48, 60);
-    v.widgets.active.bg_fill = Color32::from_rgb(54, 58, 72);
+    v.widgets.noninteractive.bg_fill = Color32::from_rgb(45, 45, 45);
+    v.widgets.inactive.bg_fill = Color32::from_rgb(60, 60, 60);
+    v.widgets.hovered.bg_fill = Color32::from_rgb(42, 45, 46);
+    v.widgets.active.bg_fill = Color32::from_rgb(55, 55, 61);
 
-    v.widgets.noninteractive.fg_stroke.color = Color32::from_rgb(100, 106, 122);
-    v.widgets.inactive.fg_stroke.color = Color32::from_rgb(160, 166, 182);
-    v.widgets.hovered.fg_stroke.color = Color32::from_rgb(212, 216, 225);
-    v.widgets.active.fg_stroke.color = Color32::WHITE;
+    v.widgets.noninteractive.fg_stroke.color = Color32::from_rgb(133, 133, 133);
+    v.widgets.inactive.fg_stroke.color = Color32::from_rgb(204, 204, 204);
+    v.widgets.hovered.fg_stroke.color = Color32::from_rgb(212, 212, 212);
+    v.widgets.active.fg_stroke.color = Color32::from_rgb(255, 255, 255);
+
+    v.widgets.noninteractive.bg_stroke.color = Color32::from_rgb(60, 60, 60);
+    v.widgets.inactive.bg_stroke.color = Color32::from_rgb(86, 86, 86);
+    v.widgets.hovered.bg_stroke.color = Color32::from_rgb(0, 122, 204);
+    v.widgets.active.bg_stroke.color = Color32::from_rgb(0, 122, 204);
 
     v
 }

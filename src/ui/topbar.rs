@@ -160,14 +160,14 @@ pub fn show(app: &mut MdApp, ui: &mut egui::Ui) {
                         ui.label(
                             RichText::new("Reading aloud...")
                                 .small()
-                                .color(egui::Color32::from_rgb(200, 160, 80)),
+                                .color(egui::Color32::from_rgb(206, 145, 120)),
                         );
                     } else if let Some((msg, _)) = &app.status {
                         ui.separator();
                         ui.label(
                             RichText::new(msg)
                                 .small()
-                                .color(egui::Color32::from_rgb(200, 160, 80)),
+                                .color(egui::Color32::from_rgb(206, 145, 120)),
                         );
                     } else if app.document.is_some() {
                         ui.separator();
